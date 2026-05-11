@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Housera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --text: #0a0a0a;
+      --text-secondary: #52525b;
+      --text-tertiary: #a1a1aa;
+      --border: #e4e4e7;
+      --bg: #ffffff;
+      --bg-subtle: #fafafa;
+      --accent: #6B9080;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-parent {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-parent:hover { color: var(--text-secondary); }
+
+    .page-header {
+      padding: 80px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .page-header .updated {
+      font-size: 14px;
+      color: var(--text-tertiary);
+    }
+
+    .legal {
+      padding: 48px 0 80px;
+    }
+    .legal h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .legal h2:first-child {
+      margin-top: 0;
+    }
+    .legal h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .legal p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .legal ul {
+      margin: 0 0 16px 0;
+      padding-left: 24px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .legal li {
+      margin-bottom: 6px;
+    }
+    .legal li::marker {
+      color: var(--text-tertiary);
+    }
+    .legal strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .legal a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(107, 144, 128, 0.3);
+      transition: border-color 0.2s;
+    }
+    .legal a:hover {
+      border-color: var(--accent);
+    }
+    .legal .uppercase {
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 56px 0 36px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .page-header { padding: 40px 0 28px; }
+      .legal { padding: 32px 0 56px; }
+      .legal h2 { margin-top: 36px; }
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+      <a href="/" class="brand">Housera</a>
+      <a href="https://aiappstechnology.com" class="nav-parent">AI Apps Tech</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="page-header">
+      <div class="app-badge">Housera: AI Home Design Decor</div>
+      <h1>Terms of Service</h1>
+      <span class="updated">Last updated: May 11, 2026</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="legal">
+
+      <p>These Terms of Service ("Terms") govern your use of the Housera mobile application and web service (the "App") operated by Yulia Mishina, sole entrepreneur registered in Georgia ("we," "us," or "our").</p>
+      <p>By accessing or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+
+      <h2>1. Eligibility</h2>
+      <p>You must be at least 13 years of age to use the App. If you are under 18, you represent that you have your parent's or legal guardian's permission to use the App. By using the App, you represent and warrant that you meet these requirements.</p>
+
+      <h2>2. Description of the Service</h2>
+      <p>Housera is an AI-powered room redesign tool. You upload a photo of a room, select a design mode and style, and the App generates an AI-produced image showing a redesigned version of that room. The App is available on iOS, Android, and web browsers.</p>
+
+      <h2>3. User Accounts</h2>
+
+      <h3>3.1 Account Creation</h3>
+      <p>Accounts are created automatically using a device-generated identifier. No email, password, or personal information is required to create an account.</p>
+
+      <h3>3.2 Account Responsibility</h3>
+      <p>You are responsible for maintaining the security of your device. If your device identifier is compromised, we cannot recover or transfer your account, subscription, or saved generations.</p>
+
+      <h2>4. Subscriptions and Payments</h2>
+
+      <h3>4.1 Subscription Plans</h3>
+      <p>The App offers paid subscription plans that provide weekly generation allowances. Plan details, pricing, and generation limits are displayed in the App and may change from time to time.</p>
+
+      <h3>4.2 Billing</h3>
+      <p>Subscriptions are billed on a recurring weekly basis through the Apple App Store or Google Play Store. By subscribing, you authorize recurring charges until you cancel.</p>
+
+      <h3>4.3 Cancellation</h3>
+      <p>You may cancel your subscription at any time through the App or through your device's subscription management settings. Cancellation takes effect at the end of the current billing period. No refunds are provided for partial billing periods.</p>
+
+      <h3>4.4 Usage Limits</h3>
+      <p>Each subscription tier includes a weekly generation limit. Unused generations do not carry over between weeks. Weekly limits reset every Monday (UTC).</p>
+
+      <h3>4.5 Price Changes</h3>
+      <p>We reserve the right to change subscription pricing. We will provide reasonable notice of price changes. Continued use after a price change constitutes acceptance of the new pricing.</p>
+
+      <h2>5. Acceptable Use</h2>
+      <p>You agree <strong>not</strong> to:</p>
+      <ul>
+        <li>Upload images that you do not have the right to use.</li>
+        <li>Upload images containing illegal content, explicit material, or content that violates the rights of others.</li>
+        <li>Attempt to access another user's account or data.</li>
+        <li>Reverse-engineer, decompile, or disassemble the App or its underlying technology.</li>
+        <li>Use the App for any commercial purpose (such as reselling generated images as a service) without our prior written consent.</li>
+        <li>Use automated tools, bots, or scripts to access the App or generate images in bulk.</li>
+        <li>Interfere with or disrupt the App's servers, networks, or infrastructure.</li>
+        <li>Circumvent or attempt to circumvent usage limits, subscription checks, or other access controls.</li>
+      </ul>
+      <p>We reserve the right to suspend or terminate your access if you violate these terms.</p>
+
+      <h2>6. Intellectual Property</h2>
+
+      <h3>6.1 The App</h3>
+      <p>The App, including its design, code, branding, and content (excluding user-uploaded images and AI-generated outputs), is owned by us and protected by applicable intellectual property laws.</p>
+
+      <h3>6.2 Your Images</h3>
+      <p>You retain ownership of the original room images you upload. By uploading an image, you grant us a limited, non-exclusive license to process and store the image solely for the purpose of providing the service.</p>
+
+      <h3>6.3 AI-Generated Images</h3>
+      <p>AI-generated redesign images are produced by third-party AI models. We grant you a non-exclusive, worldwide, royalty-free license to use the AI-generated images for personal, non-commercial purposes. Commercial use of generated images requires our prior written consent.</p>
+      <p>You acknowledge that AI-generated images may resemble existing designs, products, or copyrighted works. You are solely responsible for ensuring your use of generated images does not infringe on the rights of others.</p>
+
+      <h3>6.4 No Guarantee of Uniqueness</h3>
+      <p>AI-generated results are not guaranteed to be unique. Similar inputs may produce similar outputs for different users.</p>
+
+      <h2>7. AI-Generated Content Disclaimer</h2>
+      <p>The App uses third-party artificial intelligence to generate redesigned room images. You acknowledge and agree that:</p>
+      <ul>
+        <li>AI-generated images are provided "as-is" and for <strong>inspiration and visualization purposes only</strong>.</li>
+        <li>Generated images are <strong>not professional architectural, interior design, or engineering advice</strong>.</li>
+        <li>We do not guarantee the accuracy, quality, feasibility, or safety of any design shown in a generated image.</li>
+        <li>You should <strong>not</strong> rely on generated images for construction, renovation, or purchasing decisions without consulting a qualified professional.</li>
+        <li>AI outputs may contain errors, artifacts, unrealistic elements, or inaccuracies.</li>
+      </ul>
+
+      <h2>8. Disclaimer of Warranties</h2>
+      <p class="uppercase">The App is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+      <p>We do not warrant that:</p>
+      <ul>
+        <li>The App will be uninterrupted, error-free, or secure.</li>
+        <li>Generated images will meet your expectations or requirements.</li>
+        <li>Any defects will be corrected.</li>
+        <li>The App will be compatible with all devices or platforms.</li>
+      </ul>
+
+      <h2>9. Limitation of Liability</h2>
+      <p class="uppercase">To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, data, use, or goodwill, arising out of or related to your use of the App.</p>
+      <p class="uppercase">Our total aggregate liability for all claims arising out of or related to these Terms or the App shall not exceed the amount you paid us in the twelve (12) months preceding the claim.</p>
+
+      <h2>10. Indemnification</h2>
+      <p>You agree to indemnify and hold us harmless from any claims, damages, losses, or expenses (including reasonable legal fees) arising out of:</p>
+      <ul>
+        <li>Your use of the App.</li>
+        <li>Your violation of these Terms.</li>
+        <li>Your violation of any rights of a third party.</li>
+        <li>Images you upload to the App.</li>
+      </ul>
+
+      <h2>11. Third-Party Services</h2>
+      <p>The App uses third-party services to generate AI images (OpenRouter and Google Gemini). Your use of the App is also subject to the terms and policies of these providers. We are not responsible for the availability, accuracy, or conduct of third-party services.</p>
+
+      <h2>12. Termination</h2>
+
+      <h3>12.1 By You</h3>
+      <p>You may stop using the App at any time. You may cancel your subscription as described in Section 4.3.</p>
+
+      <h3>12.2 By Us</h3>
+      <p>We may suspend or terminate your access to the App at any time, with or without cause, and with or without notice. Reasons for termination include, but are not limited to, violation of these Terms or abusive use of the service.</p>
+
+      <h3>12.3 Effect of Termination</h3>
+      <p>Upon termination, your right to use the App ceases immediately. We are not obligated to retain or provide access to your data after termination. Active subscriptions will not be refunded upon termination for cause.</p>
+
+      <h2>13. Modifications to These Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of material changes by posting the updated terms within the App or on our website with a new "Last updated" date. Your continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+
+      <h2>14. Governing Law and Disputes</h2>
+      <p>These Terms are governed by the laws of Georgia, without regard to conflict-of-law principles. Any disputes arising out of or related to these Terms or the App shall be resolved through good-faith negotiation. If negotiation fails, disputes shall be submitted to the competent courts of Georgia.</p>
+
+      <h2>15. Severability</h2>
+      <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+      <h2>16. Entire Agreement</h2>
+      <p>These Terms, together with our <a href="/privacy">Privacy Policy</a>, constitute the entire agreement between you and us regarding the App and supersede all prior agreements or understandings.</p>
+
+      <h2>17. Contact Us</h2>
+      <p>If you have questions about these Terms, contact us at:</p>
+      <p><strong>Yulia Mishina</strong><br>Sole Entrepreneur<br>Georgia</p>
+      <p>Email: <a href="mailto:privacy@housera.app">privacy@housera.app</a></p>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 AI Apps Tech. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

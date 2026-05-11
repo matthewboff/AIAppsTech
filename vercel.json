@@ -1,7 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/privacy", "destination": "/housera/privacy.html" },
-    { "source": "/terms", "destination": "/housera/terms.html" }
-  ],
   "cleanUrls": true
 }
