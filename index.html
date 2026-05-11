@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Apps Tech — Crafting AI-Powered Mobile Experiences</title>
   <meta name="description" content="AI Apps Tech crafts AI-powered mobile experiences for everyday use.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,6 +66,13 @@
       text-transform: uppercase;
       color: var(--text);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      height: 28px;
+      width: auto;
     }
     .nav-links {
       display: flex;
@@ -317,7 +325,10 @@
 
   <div class="container">
     <nav>
-      <a href="/" class="brand">AI Apps Tech</a>
+      <a href="/" class="brand">
+        <img src="/logo.svg" alt="AI Apps Tech" class="brand-logo">
+        AI Apps Tech
+      </a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
