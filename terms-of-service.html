@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service — AI Apps Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --text: #0a0a0a;
+      --text-secondary: #52525b;
+      --text-tertiary: #a1a1aa;
+      --border: #e4e4e7;
+      --bg: #ffffff;
+      --bg-subtle: #fafafa;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: #111;
-      background: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -21,34 +35,55 @@
       padding: 0 24px;
     }
 
+    /* ── Nav ── */
     nav {
-      padding: 32px 0;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    nav .brand {
+    .brand {
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #111;
+      color: var(--text);
       text-decoration: none;
     }
+    .nav-back {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .nav-back svg {
+      width: 16px;
+      height: 16px;
+    }
 
+    /* ── Page header ── */
     .page-header {
       padding: 80px 0 48px;
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid var(--border);
     }
     .page-header h1 {
       font-size: clamp(32px, 6vw, 48px);
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       line-height: 1.1;
       margin-bottom: 12px;
     }
     .page-header .updated {
       font-size: 14px;
-      color: #999;
+      color: var(--text-tertiary);
     }
 
+    /* ── Legal content ── */
     .legal {
       padding: 48px 0 80px;
     }
@@ -58,38 +93,44 @@
       margin-top: 48px;
       margin-bottom: 16px;
       letter-spacing: -0.01em;
+      color: var(--text);
     }
     .legal h2:first-child {
       margin-top: 0;
     }
     .legal p {
       font-size: 16px;
-      line-height: 1.75;
-      color: #333;
+      line-height: 1.8;
+      color: var(--text-secondary);
       margin-bottom: 16px;
     }
     .legal ul {
-      margin: 0 0 16px 24px;
+      margin: 0 0 16px 0;
+      padding-left: 24px;
       font-size: 16px;
-      line-height: 1.75;
-      color: #333;
+      line-height: 1.8;
+      color: var(--text-secondary);
     }
     .legal li {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+    }
+    .legal li::marker {
+      color: var(--text-tertiary);
     }
     .legal a {
-      color: #111;
-      border-bottom: 1px solid #ccc;
+      color: var(--text);
       text-decoration: none;
+      border-bottom: 1px solid var(--border);
       transition: border-color 0.2s;
     }
     .legal a:hover {
-      border-color: #111;
+      border-color: var(--text);
     }
 
+    /* ── Footer ── */
     footer {
-      padding: 48px 0;
-      border-top: 1px solid #e5e5e5;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
     }
     .footer-inner {
       display: flex;
@@ -100,7 +141,7 @@
     }
     .footer-copy {
       font-size: 13px;
-      color: #999;
+      color: var(--text-tertiary);
     }
     .footer-links {
       display: flex;
@@ -108,12 +149,27 @@
     }
     .footer-links a {
       font-size: 13px;
-      color: #999;
+      color: var(--text-tertiary);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-links a:hover {
-      color: #111;
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .page-header { padding: 56px 0 36px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .page-header { padding: 40px 0 28px; }
+      .legal { padding: 32px 0 56px; }
+      .legal h2 { margin-top: 36px; }
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
     }
   </style>
 </head>
@@ -122,6 +178,10 @@
   <div class="container">
     <nav>
       <a href="/" class="brand">AI Apps Tech</a>
+      <a href="/" class="nav-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Home
+      </a>
     </nav>
   </div>
 

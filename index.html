@@ -5,92 +5,252 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Apps Tech — Crafting AI-Powered Mobile Experiences</title>
   <meta name="description" content="AI Apps Tech crafts AI-powered mobile experiences for everyday use.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --text: #0a0a0a;
+      --text-secondary: #52525b;
+      --text-tertiary: #a1a1aa;
+      --border: #e4e4e7;
+      --bg: #ffffff;
+      --bg-subtle: #fafafa;
+      --accent: #18181b;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: #111;
-      background: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
+    /* ── Fade-in on scroll ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ── Nav ── */
     nav {
-      padding: 32px 0;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    nav .brand {
+    .brand {
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #111;
+      color: var(--text);
       text-decoration: none;
     }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
 
     /* ── Hero ── */
     .hero {
-      padding: 120px 0 100px;
-      border-bottom: 1px solid #e5e5e5;
+      padding: 140px 0 120px;
+      text-align: left;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      background: var(--bg);
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
     .hero h1 {
-      font-size: clamp(40px, 8vw, 64px);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.05;
-      margin-bottom: 24px;
+      font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      font-size: clamp(40px, 7.5vw, 80px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+    .hero h1 em {
+      font-style: italic;
     }
     .hero p {
-      font-size: clamp(18px, 3vw, 22px);
-      color: #666;
-      line-height: 1.5;
-      max-width: 540px;
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 520px;
     }
 
-    /* ── Sections ── */
-    section {
-      padding: 80px 0;
-      border-bottom: 1px solid #e5e5e5;
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      max-width: 1080px;
+      margin: 0 auto;
     }
-    section:last-of-type {
-      border-bottom: none;
+
+    /* ── About ── */
+    .about {
+      padding: 100px 0;
     }
-    section h2 {
-      font-size: 14px;
+    .about-inner {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-label {
+      font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #999;
-      margin-bottom: 24px;
+      color: var(--text-tertiary);
+      padding-top: 4px;
     }
-    section p {
+    .about-content p {
       font-size: 18px;
-      line-height: 1.7;
-      color: #333;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .about-content p + p {
+      margin-top: 20px;
+    }
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .value-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .value-card:hover {
+      border-color: #d4d4d8;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+    .value-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .value-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
     }
 
     /* ── Contact ── */
-    .contact a {
-      color: #111;
-      text-decoration: none;
-      border-bottom: 1px solid #ccc;
-      transition: border-color 0.2s;
+    .contact {
+      padding: 100px 0;
+      background: var(--bg-subtle);
     }
-    .contact a:hover {
-      border-color: #111;
+    .contact-inner {
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .contact h2 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .contact p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .contact-link:hover {
+      border-color: #d4d4d8;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transform: translateY(-1px);
+    }
+    .contact-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--text-secondary);
     }
 
     /* ── Footer ── */
     footer {
-      padding: 48px 0;
-      border-top: 1px solid #e5e5e5;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
     }
     .footer-inner {
       display: flex;
@@ -101,7 +261,7 @@
     }
     .footer-copy {
       font-size: 13px;
-      color: #999;
+      color: var(--text-tertiary);
     }
     .footer-links {
       display: flex;
@@ -109,12 +269,47 @@
     }
     .footer-links a {
       font-size: 13px;
-      color: #999;
+      color: var(--text-tertiary);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-links a:hover {
-      color: #111;
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      .hero { padding: 80px 0 72px; }
+      .hero-badge { margin-bottom: 28px; }
+      .hero h1 { font-size: clamp(36px, 8vw, 56px); }
+
+      .about { padding: 64px 0; }
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .values {
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+      }
+
+      .contact { padding: 64px 0; }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .hero { padding: 56px 0 56px; }
+      .hero h1 { font-size: 34px; }
+      .about { padding: 48px 0; }
+      .contact { padding: 48px 0; }
+      .value-card { padding: 20px; }
     }
   </style>
 </head>
@@ -123,27 +318,73 @@
   <div class="container">
     <nav>
       <a href="/" class="brand">AI Apps Tech</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </div>
 
   <div class="container">
-    <div class="hero">
-      <h1>Crafting AI-powered mobile experiences for everyday use.</h1>
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Building the future of mobile AI
+      </div>
+      <h1>Crafting AI-powered mobile experiences for <em>everyday</em> use.</h1>
       <p>We build apps that put artificial intelligence to work — solving real problems in ways that feel simple and effortless.</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <section class="about">
-      <h2>About</h2>
-      <p>AI Apps Tech is a small, focused studio building mobile applications powered by artificial intelligence. We believe the best technology disappears into the background — making everyday tasks easier without getting in the way. Every app we make starts with a real problem and a simple question: how can AI make this better?</p>
     </section>
   </div>
 
-  <div class="container">
+  <div class="divider"></div>
+
+  <div id="about">
+    <div class="container">
+      <section class="about">
+        <div class="about-inner reveal">
+          <span class="section-label">About</span>
+          <div class="about-content">
+            <p>AI Apps Tech is a small, focused studio building mobile applications powered by artificial intelligence. We believe the best technology disappears into the background — making everyday tasks easier without getting in the way.</p>
+            <p>Every app we make starts with a real problem and a simple question: how can AI make this better?</p>
+          </div>
+        </div>
+        <div class="values reveal">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>AI-First</h3>
+            <p>Every product we build is designed around intelligent capabilities from day one — not bolted on as an afterthought.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3>Simple by Design</h3>
+            <p>Complex technology, effortless experience. We obsess over removing friction so you don't have to think about it.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3>Practical Solutions</h3>
+            <p>We don't chase trends. We find real problems that real people have and build tools that actually solve them.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="contact">
     <section class="contact">
-      <h2>Contact</h2>
-      <p>Want to get in touch? Reach us at <a href="mailto:hello@aiappstechnology.com">hello@aiappstechnology.com</a></p>
+      <div class="contact-inner reveal">
+        <h2>Get in touch</h2>
+        <p>Have a question, idea, or just want to say hello? We'd love to hear from you.</p>
+        <a href="mailto:hello@aiappstechnology.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hello@aiappstechnology.com
+        </a>
+      </div>
     </section>
   </div>
 
@@ -159,5 +400,16 @@
     </footer>
   </div>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
